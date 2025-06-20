@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const TodoApp = () => {
   const [inputText, setInputText] = useState('');
@@ -32,6 +33,9 @@ const TodoApp = () => {
     const newList = [...todoList];
     newList.splice(index, 1);
     setTodoList(newList);
+
+Swal.fire("Are You Deleted This Task?");
+
   };
 
   return (
