@@ -16,7 +16,15 @@ const TodoApp = () => {
     setInputText('');
   };
 
-//   Delted to list
+  //Updated to do list
+
+ const editTodo = (index) => {
+    setInputText(todoList[index].text);
+    deleteTodo(index);
+  };
+
+
+//   Deleted to list
   const deleteTodo = (index) => {
     const newList = [...todoList];
     newList.splice(index);
@@ -48,11 +56,21 @@ const TodoApp = () => {
           {todoList.map((todo, index) => (
             <div key={index} className="flex justify-between bg-white p-2 rounded mt-2">
               <span className={todo.completed ? "line-through text-green-600" : ""}>{todo.text}</span>
+
+
+{/* update to do */}
+
+            <button onClick={() => editTodo(index)} className="bg-green-500 text-white px-2 rounded">
+                  Update
+                </button>
+
+
+              {/* delted button */}
           <button onClick={() => deleteTodo(index)} className="bg-red-500 text-white px-2 rounded">
                   Delete
                 </button>
 
-                <button>Update</button>
+                
             </div>
           ))}
         </div>
