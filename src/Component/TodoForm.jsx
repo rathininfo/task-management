@@ -55,13 +55,17 @@ const TodoApp = () => {
         <div className="mt-6 space-y-3">
           {todoList.map((todo, index) => (
             <div key={index} className="flex flex-col sm:flex-row justify-between items-center bg-slate-100 p-3 rounded">
-              <span className={`text-lg ${todo.completed ? "line-through text-green-600" : ""}`}>
+              <span>
                 {todo.text}
               </span>
               <div className="flex gap-2 mt-2 sm:mt-0">
-                <button onClick={() => completeTodo(index)} className="bg-green-400 px-3 py-1 rounded text-white">
-                  {todo.completed ? 'Undo' : 'Complete'}
-                </button>
+
+                <button onClick={() => completeTodo(index)}
+  className={`px-3 py-1 rounded text-white 
+    ${todo.completed ? 'bg-green-500' : 'bg-blue-500'}`}>
+  {todo.completed ? 'Completed' : 'Running'}
+</button>
+
                 <button onClick={() => editTodo(index)} className="bg-yellow-400 px-3 py-1 rounded text-white">
                   Edit
                 </button>
