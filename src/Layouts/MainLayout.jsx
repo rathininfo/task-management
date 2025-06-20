@@ -1,11 +1,11 @@
-import React from 'react';
-import Navbar from '../Component/Navbar';
+
 import { Outlet } from 'react-router-dom';
+import TodoForm from '../Component/TodoForm';
 
 const MainLayout = () => {
     return (
         <div className=''>
-            <Navbar></Navbar>
+            <TodoForm></TodoForm>
             <Outlet></Outlet>
         </div>
     );
